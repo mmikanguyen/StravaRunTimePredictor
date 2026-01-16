@@ -2,6 +2,8 @@ import pandas as pd
 import os
 import time
 import requests
+from dotenv import load_dotenv
+load_dotenv
 
 max_pages = 10          # adjust as needed
 per_page = 200          # max allowed by Strava is 200
@@ -62,7 +64,8 @@ for page in range(1, max_pages + 1):
 # --- Save runs to CSV ---
 df = pd.DataFrame(activities)
 df_runs = df[df["type"] == "Run"]
-
-os.makedirs("../data/raw", exist_ok=True)
-file_path = os.path.abspath("../data/raw/runs.csv")
+script_dir = os.path.dirname(os.path.abspath(__file__))
+raw_dir = os.path.join(script_dir, "..", "data", "raw")
+os.makedirs(raw_dir, exist_ok=True)
+file_path = os.path.join(raw_dir, "runs.csv")
 df_runs.to_csv(file_path, index=False)
