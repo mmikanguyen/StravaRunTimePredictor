@@ -68,5 +68,3 @@ def load_activities():
 
     file_path = os.path.join(raw_dir, "runs_test.csv")
     df_runs.to_csv(file_path, index=False)
-
-load_activities()
