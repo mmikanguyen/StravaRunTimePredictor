@@ -61,11 +61,13 @@ for page in range(1, max_pages + 1):
     activities.extend(page_data)
     time.sleep(sleep_seconds)
 
-# --- Save runs to CSV ---
+
 df = pd.DataFrame(activities)
 df_runs = df[df["type"] == "Run"]
+
 script_dir = os.path.dirname(os.path.abspath(__file__))
 raw_dir = os.path.join(script_dir, "..", "data", "raw")
 os.makedirs(raw_dir, exist_ok=True)
-file_path = os.path.join(raw_dir, "runs.csv")
+
+file_path = os.path.join(raw_dir, "runs_test.csv")
 df_runs.to_csv(file_path, index=False)
