@@ -1,8 +1,8 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from src.data import load_raw_activities
-from src.features import feature_engineer
-from src.model import RunTimeRegressor
+from data import load_activities
+from features import feature_engineer
+from model import RunTimeRegressor
 
 RANDOM_STATE = 42
 
@@ -17,8 +17,8 @@ FEATURE_COLUMNS = [
 
 TARGET_COLUMN = "total_time_min"
 
-raw_df = load_raw_activities("data/raw/runs.csv")
-df=feature_engineer(raw_df)
+raw_df = load_activities()
+df=feature_engineer("data/raw/runs.csv")
 df.to_csv("data/processed/run_features.csv", index=False)
 
 split_idx = int(len(df)*0.8)

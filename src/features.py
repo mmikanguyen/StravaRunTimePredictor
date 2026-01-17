@@ -1,9 +1,8 @@
 import pandas as pd
 import os
 
-os.makedirs("../data/processed", exist_ok=True)
+#os.makedirs("../data/processed", exist_ok=True)
 runs = pd.read_csv("../data/raw/runs.csv")
-
 
 def feature_engineer(df):
     df["distance_km"] = df["distance"]/1000
@@ -29,5 +28,3 @@ def feature_engineer(df):
     file_path = os.path.join(raw_dir, "features.csv")
     df.to_csv(file_path, index=False)
 
-#print(runs)
-feature_engineer(runs)
