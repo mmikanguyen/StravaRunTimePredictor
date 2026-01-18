@@ -31,11 +31,12 @@ def get_access_token(refresh_token):
 
 
 def load_activities():
-    # Get a valid access token
+    """
+    Save athlete's running activities to csv
+    """
     access_token, REFRESH_TOKEN = get_access_token(os.getenv("STRAVA_REFRESH_TOKEN"))
     headers = {"Authorization": f"Bearer {access_token}"}
 
-    # --- Fetch activities ---
     activities = []
 
     for page in range(1, max_pages + 1):
@@ -43,7 +44,6 @@ def load_activities():
 
         response = requests.get(ACTIVITIES_URL, headers=headers, params=params)
         
-        # If the access token expired mid-loop, refresh and retry
         if response.status_code == 401:
             access_token, REFRESH_TOKEN = get_access_token(REFRESH_TOKEN)
             headers = {"Authorization": f"Bearer {access_token}"}
