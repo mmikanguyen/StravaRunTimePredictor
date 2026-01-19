@@ -32,3 +32,5 @@ Clone repo and create a .env file in the project root with:
 - STRAVA_CLIENT_ID=your_client_id
 - STRAVA_CLIENT_SECRET=your_client_secret
 - STRAVA_REFRESH_TOKEN=your_refresh_token
+
+Run train.py to test model and generate visualizations. Further analysis in explore.py
