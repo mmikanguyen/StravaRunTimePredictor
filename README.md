@@ -3,6 +3,10 @@ This project uses data from the Strava API to build a machine learning model tha
 
 The goal is to learn patterns from past runs and use them to estimate future performance over different distances.
 
+(Project Context)
+
+This project is based on my own running data. I began running regularly about six months ago, transitioning from a beginner to a more structured runner over time. In this period, my training evolved from short, easy runs to more varied workouts including longer runs, tempo efforts, and progressive mileage.
+
 ## How It Works
 Fetch Data From Strava
 Use your Strava refresh token to obtain an access token to pull your recent activities from the Strava API. This project saves running activities in runs.csv.
