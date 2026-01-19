@@ -4,6 +4,9 @@ import os
 #os.makedirs("../data/processed", exist_ok=True)
 
 def feature_engineer(runs, n_recent=None):
+    """
+    Calculating features for model training
+    """
     df = pd.read_csv(runs)
     df["distance_km"] = df["distance"]/1000
     df["total_time_min"]=df["moving_time"]/60
