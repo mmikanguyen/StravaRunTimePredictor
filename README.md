@@ -13,14 +13,16 @@ Use your Strava refresh token to obtain an access token to pull your recent acti
 
 ## Features
 features.csv contains additional variables calculated for modeling: 
-- distance_km
-- total_time_min
-- pace_per_km
-- elevation_per_km
-- weekly_km
-- rolling_pace
-- hr_percent_max
-- effort_pace
+- distance_km: total distance in kilometers
+- total_time_min: total moving time in minutes
+- pace_per_km: average pace in min/km
+- avg_hr: average heart rate during the run
+- avg_cadence: average running cadence
+- elevation_per_km: elevation gain per kilometer
+- weekly_km: total distance run in past 7 days
+- rolling_pace: average pace over recent runs
+- hr_percent_max: average heart rate as a % of est. max heart rate
+- effort_pace: pace adjusted to heart rate
 
 ## Model
 Trains a Random Forest Regression Model to predict total_time_min and evaluates performance through MAE and MSE. Uses 80/20 split and uses most recent activities for testing.
