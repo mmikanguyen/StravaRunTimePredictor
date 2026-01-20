@@ -23,7 +23,7 @@ features.csv contains additional variables calculated for modeling:
 - effort_pace: pace adjusted to heart rate
 
 ## Model
-Trains a Random Forest Regression Model to predict total_time_min and evaluates performance through MAE and MSE. Uses 80/20 split and uses most recent activities for testing.
+Trains a Linear Model to predict total_time_min and evaluates performance through MAE, MSE, and R2. Uses 80/20 split and uses most recent activities for testing.
 
 ## Setup
 Clone repo and create a .env file in the project root with:
@@ -31,4 +31,4 @@ Clone repo and create a .env file in the project root with:
 - STRAVA_CLIENT_SECRET=your_client_secret
 - STRAVA_REFRESH_TOKEN=your_refresh_token
 
-Run train.py to test model and generate visualizations. Further analysis in explore.py
+Run model in explore.ipynb to test model generate visualizations.
