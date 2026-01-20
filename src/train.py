@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from data import load_activities
 from features import feature_engineer
-from random_forest import RunTimeRegressor
+from model import RunTimeRegressor
 
 RANDOM_STATE = 42
 
@@ -22,7 +22,7 @@ TARGET_COLUMN = "total_time_min"
 def train_model(test_size=0.2):
     # Load & process data
     raw_df = load_activities()
-    feature_engineer("../data/raw/runs_test.csv")
+    feature_engineer("../data/raw/runs.csv")
 
     df = pd.read_csv("../data/processed/features.csv")
     df = df.dropna(subset=FEATURE_COLUMNS + [TARGET_COLUMN])
