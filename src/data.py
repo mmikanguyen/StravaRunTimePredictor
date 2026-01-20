@@ -66,5 +66,5 @@ def load_activities():
     raw_dir = os.path.join(script_dir, "..", "data", "raw")
     os.makedirs(raw_dir, exist_ok=True)
 
-    file_path = os.path.join(raw_dir, "runs_test.csv")
+    file_path = os.path.join(raw_dir, "runs.csv")
     df_runs.to_csv(file_path, index=False)
